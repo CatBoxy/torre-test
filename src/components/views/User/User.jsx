@@ -42,6 +42,12 @@ const User = () => {
         return <div>Error: {error.message}</div>;
     }
 
+    let master = strengths.filter((strength) => strength.proficiency === 'master')
+    let expert = strengths.filter((strength) => strength.proficiency === 'expert')
+    let proficient = strengths.filter((strength) => strength.proficiency === 'proficient')
+    let novice = strengths.filter((strength) => strength.proficiency === 'novice')
+    let interested = strengths.filter((strength) => strength.proficiency === 'no-experience-interested')
+
     return (
         <>
             <Header />
@@ -49,48 +55,50 @@ const User = () => {
                 <div className='mainLayout'>
                     <div className='avatar'>
                         <img className='avatarImage' src={userData?.person.picture} alt="avatarPicture" />
-                        <h3 className='avatarName'>{userData?.person.name}</h3>
+                        <h2 className='avatarName'>{userData?.person.name}</h2>
                     </div>
                     <div className='skills'>
+                        <h3>Skills and interests:</h3>
                         <div className='skill'>
-                            <h2>Master</h2>
-                            {strengths
-                                .filter((strength) => strength.proficiency === 'master')
-                                .map((strength) => (
-                                    <button key={strength.id}>{strength.name}</button>
-                                ))}
+                            <h4>Master</h4>
+                            <div>
+                                {master.length > 0 ? master.map((strength) => (
+                                    <button className='skillTag' key={strength.id}>{strength.name}</button>
+                                )) : <p>[empty]</p>
+                                }
+                            </div>
                         </div>
                         <div className='skill'>
-                            <h2>Expert</h2>
-                            {strengths
-                                .filter((strength) => strength.proficiency === 'expert')
-                                .map((strength) => (
-                                    <button key={strength.id}>{strength.name}</button>
-                                ))}
+                            <h4>Expert</h4>
+                            <div>
+                                {expert.length > 0 ? expert.map((strength) => (
+                                    <button className='skillTag' key={strength.id}>{strength.name}</button>
+                                )) : <p>[empty]</p>}
+                            </div>
                         </div>
                         <div className='skill'>
-                            <h2>Proficient</h2>
-                            {strengths
-                                .filter((strength) => strength.proficiency === 'proficient')
-                                .map((strength) => (
-                                    <button key={strength.id}>{strength.name}</button>
-                                ))}
+                            <h4>Proficient</h4>
+                            <div>
+                                {proficient.length > 0 ? proficient.map((strength) => (
+                                    <button className='skillTag' key={strength.id}>{strength.name}</button>
+                                )) : <p>[empty]</p>}
+                            </div>
                         </div>
                         <div className='skill'>
-                            <h2>Begginer</h2>
-                            {strengths
-                                .filter((strength) => strength.proficiency === 'novice')
-                                .map((strength) => (
-                                    <button key={strength.id}>{strength.name}</button>
-                                ))}
+                            <h4>Begginer</h4>
+                            <div>
+                                {novice.length > 0 ? novice.map((strength) => (
+                                    <button className='skillTag' key={strength.id}>{strength.name}</button>
+                                )) : <p>[empty]</p>}
+                            </div>
                         </div>
                         <div className='skill'>
-                            <h2>No experience, but interested</h2>
-                            {strengths
-                                .filter((strength) => strength.proficiency === 'no-experience-interested')
-                                .map((strength) => (
-                                    <button key={strength.id}>{strength.name}</button>
-                                ))}
+                            <h4>No experience, but interested</h4>
+                            <div>
+                                {interested.length > 0 ? interested.map((strength) => (
+                                    <button className='skillTag' key={strength.id}>{strength.name}</button>
+                                )) : <p>[empty]</p>}
+                            </div>
                         </div>
                     </div>
                 </div>

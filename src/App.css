@@ -1,11 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+
 #root {
   max-width: 1280px;
   text-align: center;
   height: 100vh;
   display: flex;
   justify-content: column;
+  font-family: "Mulish","Helvetica","Arial",sans-serif
 }
 
 main {
   background-color: rgb(25, 25, 25);
+}
+
+.mainLayout {
+  padding: 0 32px 32px;
 }
