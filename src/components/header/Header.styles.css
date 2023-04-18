@@ -1,0 +1,48 @@
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+    box-shadow: 0px -15px 30px white;
+}
+
+.logout {
+    display: none;
+}
+
+.wrapper_left_header,
+.wrapper_right_header {
+    width: 50%;
+    display: flex;
+    padding: 16px;
+}
+
+.wrapper_left_header div,
+.wrapper_right_header div{
+    width: 100%;
+    display: flex;
+}
+
+.wrapper_right_header div {
+    justify-content: flex-end;
+}
+
+.wrapper_left_header div {
+    justify-content: flex-start;
+}
+
+.closedMenu{
+    display: none;
+}
+
+.openedMenu{
+    display: block;
+}
+
+.burguer{
+    margin-left: 12px
+}
