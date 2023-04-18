@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from '../../header/Header';
+import { useParams } from "react-router-dom";
 import './User.styles.css'
 
-const { VITE_APP_API_BIO_ENDPOINT } = import.meta.env;
+// const { VITE_APP_API_BIO_ENDPOINT } = import.meta.env;
 
-const User = () => {
+const User = (props) => {
 
     const [userData, setUserData] = useState();
     const [strengths, setStrengths] = useState();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
+    const { username } = useParams();
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get('https://torre-back-ke73uobv6q-uc.a.run.app/api/user');
+                const response = await axios.get(`https://torre-back-ke73uobv6q-uc.a.run.app/api/user/${username}`);
                 setUserData(response.data);
                 setStrengths(response.data.strengths);
                 setLoading(false);

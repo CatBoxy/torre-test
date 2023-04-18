@@ -1,0 +1,23 @@
+h1 {
+    font-size: 32px !important;
+}
+
+.auth {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+#inputField {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+#inputField > input {
+    padding: 12px;
+    border-radius: 3px;
+    border: solid 1px #FFFFFF;
+}
