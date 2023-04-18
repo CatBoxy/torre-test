@@ -34,7 +34,9 @@ const User = (props) => {
             <>
                 <Header />
                 <main id='user'>
-                    <div>Loading...</div>
+                    <div className='loading'>
+                        <div >Loading...</div>
+                    </div>
                 </main>
             </>
         );
