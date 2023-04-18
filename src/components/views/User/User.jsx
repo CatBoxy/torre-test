@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from '../../header/Header';
+import './User.styles.css'
 
 const { VITE_APP_API_BIO_ENDPOINT } = import.meta.env;
 
 const User = () => {
 
-    const [data, setData] = useState();
+    const [userData, setUserData] = useState();
     const [strengths, setStrengths] = useState();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -15,7 +16,7 @@ const User = () => {
         async function fetchData() {
             try {
                 const response = await axios.get('https://torre-back-ke73uobv6q-uc.a.run.app/api/user');
-                setData(response.data);
+                setUserData(response.data);
                 setStrengths(response.data.strengths);
                 setLoading(false);
             } catch (error) {
@@ -47,8 +48,8 @@ const User = () => {
             <main id='user'>
                 <div className='mainLayout'>
                     <div className='avatar'>
-                        <img className='avatarImage' src="" alt="" />
-                        <h3 className='avatarName'></h3>
+                        <img className='avatarImage' src={userData?.person.picture} alt="avatarPicture" />
+                        <h3 className='avatarName'>{userData?.person.name}</h3>
                     </div>
                     <div className='skills'>
                         <div className='skill'>

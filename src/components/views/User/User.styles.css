@@ -1,0 +1,10 @@
+.avatarImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    box-shadow: 0 -0 8px 1px #FFFFFF;
+}
+
+.avatar {
+    margin-top: 32px
+}
