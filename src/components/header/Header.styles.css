@@ -46,3 +46,8 @@ header {
 .burguer{
     margin-left: 12px
 }
+
+.logo {
+    height: 40px;
+    width: 40px;
+}

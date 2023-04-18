@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../../assets/img/react.svg'
+import logo from '../../assets/img/torrelogo.png'
 import { HiMenu } from "react-icons/hi";
 import './Header.styles.css';
 
@@ -11,7 +11,7 @@ const Header = () => {
             <header>
                 <div className="wrapper_left_header">
                     <div>
-                        <img src={logo} alt="logo" />
+                        <img className='logo' src={logo} alt="logo" />
                         <button className='burguer' onClick={() => setIsOpen(!isOpen)}>
                             <HiMenu />
                         </button>
