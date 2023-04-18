@@ -5,6 +5,7 @@ import User from './components/views/User/User'
 import Skill from './components/views/Skill/Skill'
 import './App.css'
 
+
 const Error404 = lazy(() => import('./components/views/Error404/Error404'));
 
 const pageTransition = {
