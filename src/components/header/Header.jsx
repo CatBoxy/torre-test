@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import logo from '../../assets/img/torrelogo.png'
-import { HiMenu } from "react-icons/hi";
+import { useNavigate } from 'react-router-dom';
 import './Header.styles.css';
 
 const Header = () => {
-    const [isOpen, setIsOpen] = useState(false);
+
+    const navigate = useNavigate();
 
     return (
         <>
@@ -12,14 +13,11 @@ const Header = () => {
                 <div className="wrapper_left_header">
                     <div>
                         <img className='logo' src={logo} alt="logo" />
-                        <button className='burguer' onClick={() => setIsOpen(!isOpen)}>
-                            <HiMenu />
-                        </button>
                     </div>
                 </div>
                 <div className="wrapper_right_header">
                     <div>
-                        <button>
+                        <button onClick={() => navigate("/", { replace: true })}>
                             <p>LOG OUT</p>
                         </button>
                     </div>

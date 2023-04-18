@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFormik } from "formik";
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Login.styles.css';
 import * as Yup from 'yup';

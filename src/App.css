@@ -5,14 +5,30 @@
   text-align: center;
   height: 100vh;
   display: flex;
-  justify-content: column;
+  justify-content: center;
   font-family: "Mulish","Helvetica","Arial",sans-serif
 }
 
 main {
   background-color: rgb(25, 25, 25);
+  
 }
 
 .mainLayout {
   padding: 0 32px 32px;
+
+}
+
+@media (min-width: 768px){
+  main {
+    max-width: 360px;
+    margin: auto;
+  }
+  .mainLayout{
+    box-shadow: 0px 0px 4px white; 
+    border-radius: 3px;
+    margin-top: 32px;
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
+  }
 }
