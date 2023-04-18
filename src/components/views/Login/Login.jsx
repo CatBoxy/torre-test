@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFormik } from "formik";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import './Login.styles.css';
 import * as Yup from 'yup';
@@ -20,7 +20,6 @@ export default function Login() {
     const validationSchema = () =>
         Yup.object().shape({
             userName: Yup.string()
-                .min(4, "Minimum required characters: 4")
                 .required(required),
         })
 
@@ -32,7 +31,6 @@ export default function Login() {
             try {
                 const response = await axios.get(`https://torre-back-ke73uobv6q-uc.a.run.app/api/user/${userName}`);
                 if (response.status === 200) {
-                    console.log(response)
                     navigate(`/user/${userName}`, { replace: true });
                     return
                 }
@@ -66,6 +64,9 @@ export default function Login() {
                     </div>
                     <div>
                         <button type="submit">Send</button>
+                    </div>
+                    <div className='suggested'>
+                        <p>Suggested username: <Link to="/user/juancruzlambrechts" id='juancruzlambrechts'>juancruzlambrechts</Link></p>
                     </div>
                 </form>
             </div>

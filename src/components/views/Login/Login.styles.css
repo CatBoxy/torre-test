@@ -12,12 +12,18 @@ h1 {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 32px;
+    align-items: center;height: 65px;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 8px;
 }
 
 #inputField > input {
     padding: 12px;
     border-radius: 3px;
     border: solid 1px #FFFFFF;
+}
+
+.suggested{
+    margin-top:32px
 }

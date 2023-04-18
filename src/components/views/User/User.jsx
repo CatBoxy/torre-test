@@ -3,12 +3,13 @@ import axios from 'axios';
 import Header from '../../header/Header';
 import { useParams } from "react-router-dom";
 import './User.styles.css'
+import placeholder from '../../../assets/img/placeholder.png'
 
 // const { VITE_APP_API_BIO_ENDPOINT } = import.meta.env;
 
 const User = (props) => {
 
-    const [userData, setUserData] = useState();
+    const [userData, setUserData] = useState(null);
     const [strengths, setStrengths] = useState();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -55,7 +56,7 @@ const User = (props) => {
             <main id='user'>
                 <div className='mainLayout'>
                     <div className='avatar'>
-                        <img className='avatarImage' src={userData?.person.picture} alt="avatarPicture" />
+                        <img className='avatarImage' src={userData.person.picture ? userData.person.picture : placeholder} alt="avatarPicture" />
                         <h2 className='avatarName'>{userData?.person.name}</h2>
                     </div>
                     <div className='skills'>
