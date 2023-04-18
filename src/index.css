@@ -59,3 +59,19 @@ button:focus-visible {
 p {
   margin: 0 !important;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
